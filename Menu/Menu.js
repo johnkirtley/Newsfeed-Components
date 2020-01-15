@@ -6,8 +6,7 @@ let menuItems = [
   "What's New",
   'Tech Trends',
   'Music',
-  'Log Out',
-  'Test Item'
+  'Log Out'
 ];
 
 /* 
@@ -35,21 +34,28 @@ let menuItems = [
   
 */
 
+
 function createMenu(arr) {
 
+  // Create Elements
   const burgerMenu = document.createElement('div');
   const menuList = document.createElement('ul');
 
-  burgerMenu.classList.add('menu');
-
+  // Append UL Elements to Menu
   burgerMenu.append(menuList);
 
+  // Apply Class To Menu
+  burgerMenu.classList.add('menu');
+
+  // Iterate Through Array
+  // Create List Items and Append To UL
   arr.forEach(item => {
     let menuItem = document.createElement('li');
     menuItem.textContent = item;
     menuList.append(menuItem);
   })
 
+  // Toggle Menu Display
   const menuButton = document.querySelector('.menu-button');
   menuButton.addEventListener('click', () => {
     burgerMenu.classList.toggle('menu--open');
